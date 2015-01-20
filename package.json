@@ -1,0 +1,38 @@
+{
+  "name": "react-ratchet",
+  "description": "Ratchet, rebuilt for React",
+  "keywords": [
+    "react",
+    "ratchet",
+    "react-component",
+    "mobile",
+    "ui"
+  ],
+  "author": "James Friend",
+  "version": "0.1.0",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/jsdf/react-ratchet/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "tap test",
+    "prepublish": "jsx --harmony src lib && jsx --harmony example example-build"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "bin/"
+  ],
+  "homepage": "https://github.com/jsdf/react-ratchet",
+  "bugs": "https://github.com/jsdf/react-ratchet/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jsdf/react-ratchet.git"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "react-tools": "^0.12.2"
+  }
+}
