@@ -1,25 +1,28 @@
 var React = require('react')
 var cx = require('./cx')
+var Icon = require('./Icon')
 
 var NavButton = React.createClass({
   render() {
     var side = this.props.right ? 'right' : 'left'
-    var classes = cx(`btn btn-link btn-nav pull-${side}`, this.props.className)
-    var icon = <span className={`icon icon-${side}-nav`}></span>
+    var classes = cx(this.props.className, `btn-nav btn-link btn pull-${side}`)
+    var icon = <Icon type={`${side}-nav`} />
+
+    var Component = this.props.href ? 'a' : 'button'
 
     if (side == 'left') {
       return (
-        <button {...this.props} className={classes}>
+        <Component {...this.props} className={classes}>
           {icon}
-          {this.children}
-        </button>
+          {this.props.children}
+        </Component>
       )
     } else { // right
       return (
-        <button {...this.props} className={classes}>
-          {this.children}
+        <Component {...this.props} className={classes}>
+          {this.props.children}
           {icon}
-        </button>
+        </Component>
       )
     }
   }

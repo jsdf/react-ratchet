@@ -6,7 +6,7 @@ var TableView = React.createClass({
     return (
       <ul
         {...this.props}
-        className={cx("table-view", this.props.className)}
+        className={cx(this.props.className, "table-view")}
       />
     )
   }

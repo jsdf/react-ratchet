@@ -9,8 +9,10 @@ var Button = React.createClass({
     if (this.props.rStyle) extraClasses.push(`btn-${this.props.rStyle}`)
     var className = cx.apply(null, [this.props.className, "btn"].concat(extraClasses))
 
+    var Component = this.props.href ? 'a' : 'button'
+
     return (
-      <button
+      <Component
         {...this.props}
         className={className}
       />

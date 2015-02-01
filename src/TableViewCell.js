@@ -30,8 +30,9 @@ var TableViewCell = React.createClass({
     return (
       <li
         {...this.props}
-        className={cx("table-view-divider", this.props.className)}
+        className={cx(this.props.className, "table-view-divider")}
         children={this.props.children}
+        href={null}
       />
     )
   },
@@ -43,7 +44,7 @@ var TableViewCell = React.createClass({
     return (
       <li
         {...this.props}
-        className={cx("table-view-cell", this.props.className)}
+        className={cx(this.props.className, "table-view-cell")}
         children={this.renderChildren()}
       />
     )

@@ -6,7 +6,7 @@ var NavBar = React.createClass({
     return (
       <header
         {...this.props}
-        className={cx("bar bar-nav", this.props.className)}
+        className={cx(this.props.className, "bar-nav bar")}
       />
     )
   }
