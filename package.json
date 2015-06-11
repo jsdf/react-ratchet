@@ -18,15 +18,9 @@
   ],
   "scripts": {
     "test": "jest",
-    "prepublish": "jsx --harmony src lib && jsx --harmony example example-build",
-    "build": "6to5 src --out-dir lib && 6to5 example --out-dir example-build"
+    "example": "babel example --out-dir example-build",
+    "prepublish": "babel src --out-dir lib --optional runtime"
   },
-  "files": [
-    "index.js",
-    "lib/",
-    "vendor/",
-    "bin/"
-  ],
   "homepage": "https://github.com/jsdf/react-ratchet",
   "bugs": "https://github.com/jsdf/react-ratchet/issues",
   "repository": {
@@ -34,20 +28,18 @@
     "url": "git://github.com/jsdf/react-ratchet.git"
   },
   "dependencies": {
-    "react": "0.13.x",
-    "react-tools": "0.13.x"
+    "babel-runtime": "^5.5.6",
+    "react": "0.13.x"
   },
   "devDependencies": {
-    "6to5": "^2.13.7",
+    "babel": "^5.5.6",
     "babel-jest": "^5.2.0",
-    "jest-cli": "^0.4.5",
-    "react": "0.13.x"
+    "jest-cli": "^0.4.11"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-tools"
+      "<rootDir>/node_modules/react"
     ]
   }
 }

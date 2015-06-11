@@ -1,2 +1,4 @@
 .module-cache
 src/
+example/
+example-build/
