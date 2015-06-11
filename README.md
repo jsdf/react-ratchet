@@ -16,9 +16,9 @@ Example:
 ```javascript
 var Title = require('react-ratchet').Title;
 class MyTitle extends React.Component {
-	render() {
-		return <Title>Hello World!</Title>
-	}
+  render() {
+    return <Title>Hello World!</Title>
+  }
 }
 ```
 
@@ -30,13 +30,13 @@ Example:
 ```javascript
 var NavBar = require('react-ratchet').NavBar;
 class MyNavBar extends React.Component {
-	render() {
-		return (
-		    <NavBar>
-		        <Title>Hello World!</Title>
-		    </NavBar>
-		);
-	}
+  render() {
+    return (
+        <NavBar>
+            <Title>Hello World!</Title>
+        </NavBar>
+    );
+  }
 }
 ```
 
@@ -50,13 +50,13 @@ Example:
 ```javascript
 var NavButton = require('react-ratchet').NavButton;
 class MyNavButton extends React.Component {
-	render() {
-		return (
-		    <NavButton right href='./next'>
-		        Next
-		    </NavButton>
-		);
-	}
+  render() {
+    return (
+        <NavButton right href='./next'>
+            Next
+        </NavButton>
+    );
+  }
 }
 ```
 
@@ -69,16 +69,16 @@ Example:
 var TableView = require('react-ratchet').TableView;
 var TableViewCell = require('react-ratchet').TableViewCell;
 class MyTableView extends React.Component {
-	render() {
-		return (
-		    <TableView>
-		        <TableViewCell>My</TableViewCell>
-		        <TableViewCell>React</TableViewCell>
-		        <TableViewCell>Ratchet</TableViewCell>
-		        <TableViewCell>Table</TableViewCell>
-		    </TableView>
-		);
-	}
+  render() {
+    return (
+        <TableView>
+            <TableViewCell>My</TableViewCell>
+            <TableViewCell>React</TableViewCell>
+            <TableViewCell>Ratchet</TableViewCell>
+            <TableViewCell>Table</TableViewCell>
+        </TableView>
+    );
+  }
 }
 ```
 
@@ -94,9 +94,9 @@ Example:
 ```javascript
 var TableViewCell = require('react-ratchet').TableViewCell;
 class MyTableViewCell extends React.Component {
-	render() {
-		return <TableViewCell>Hello World!</TableViewCell>
-	}
+  render() {
+    return <TableViewCell>Hello World!</TableViewCell>
+  }
 }
 ```
 
@@ -111,9 +111,9 @@ Example:
 ```javascript
 var Button = require('react-ratchet').Button;
 class MyButton extends React.Component {
-	render() {
-		return <Button block rStyle='positive'>Hello World!</Button>
-	}
+  render() {
+    return <Button block rStyle='positive'>Hello World!</Button>
+  }
 }
 ```
 
@@ -127,9 +127,9 @@ Example:
 ```javascript
 var Badge = require('react-ratchet').Badge;
 class MyBadge extends React.Component {
-	render() {
-		return <Badge rStyle='primary' inverted>42</Badge>
-	}
+  render() {
+    return <Badge rStyle='primary' inverted>42</Badge>
+  }
 }
 ```
 
@@ -142,9 +142,9 @@ Example:
 ```javascript
 var Icon = require('react-ratchet').Icon;
 class MyIcon extends React.Component {
-	render() {
-		return <Icon star-filled />
-	}
+  render() {
+    return <Icon star-filled />
+  }
 }
 ```
 
@@ -157,8 +157,8 @@ Example:
 ```javascript
 var Toggle = require('react-ratchet').Toggle;
 class MyToggle extends React.Component {
-	render() {
-		return <Toggle active />
-	}
+  render() {
+    return <Toggle active />
+  }
 }
 ```
