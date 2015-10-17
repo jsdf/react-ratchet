@@ -6,7 +6,8 @@ var NavButton = React.createClass({
   render() {
     var side = this.props.right ? 'right' : 'left'
     var classes = cx(this.props.className, `btn-nav btn-link btn pull-${side}`)
-    var icon = <Icon type={`${side}-nav`} />
+    var iconClass = this.props.icon ? this.props.icon : side + "-nav"
+    var icon = <Icon type={iconClass} />
 
     var Component = this.props.href ? 'a' : 'button'
 
