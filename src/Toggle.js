@@ -5,10 +5,10 @@ var Toggle = React.createClass({
   componentDidMount() {
     // ensure ratchet toggles initialised
     require('../vendor/toggles')
-    this.refs.toggle.getDOMNode().addEventListener('toggle', this.handleToggle)
+    React.findDOMNode(this.refs.toggle).addEventListener('toggle', this.handleToggle)
   },
   componentWillUnmount() {
-    this.refs.toggle.getDOMNode().removeEventListener('toggle', this.handleToggle)
+    React.findDOMNode(this.refs.toggle).removeEventListener('toggle', this.handleToggle)
   },
   handleToggle(e) {
     var inverse = !this.props.active
