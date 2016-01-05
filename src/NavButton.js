@@ -1,5 +1,5 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 var Icon = require('./Icon')
 
 class NavButton extends React.Component {

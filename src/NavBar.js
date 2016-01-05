@@ -1,5 +1,5 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
 class NavBar extends React.Component {
   render() {

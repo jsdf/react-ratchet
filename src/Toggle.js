@@ -1,5 +1,6 @@
 var React = require('react')
-var cx = require('./cx')
+var ReactDOM = require('react-dom')
+var cx = require('classnames')
 
 class Toggle extends React.Component {
   constructor(props, context) {
@@ -10,11 +11,11 @@ class Toggle extends React.Component {
   componentDidMount() {
     // ensure ratchet toggles initialised
     require('../vendor/toggles')
-    React.findDOMNode(this.refs.toggle).addEventListener('toggle', this.handleToggle)
+    ReactDOM.findDOMNode(this.refs.toggle).addEventListener('toggle', this.handleToggle)
   }
 
   componentWillUnmount() {
-    React.findDOMNode(this.refs.toggle).removeEventListener('toggle', this.handleToggle)
+    ReactDOM.findDOMNode(this.refs.toggle).removeEventListener('toggle', this.handleToggle)
   }
 
   handleToggle(e) {
