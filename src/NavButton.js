@@ -2,7 +2,7 @@ var React = require('react')
 var cx = require('./cx')
 var Icon = require('./Icon')
 
-var NavButton = React.createClass({
+class NavButton extends React.Component {
   render() {
     var side = this.props.right ? 'right' : 'left'
     var classes = cx(this.props.className, `btn-nav btn-link btn pull-${side}`)
@@ -27,6 +27,6 @@ var NavButton = React.createClass({
       )
     }
   }
-})
+}
 
 module.exports = NavButton
