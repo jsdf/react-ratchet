@@ -1,8 +1,8 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var ControlItem = React.createClass({
-	render() {
+class ControlItem extends React.Component {
+    render() {
 		var classes = ['control-item'];
 		if (this.props.active) classes.push('active');
 		classes = classes.concat(this.props.className);
@@ -11,6 +11,6 @@ var ControlItem = React.createClass({
 			<a className={cx.apply(null, classes)}>{this.props.children}</a>	
 		);
 	}
-});
+}
 
 module.exports = ControlItem;

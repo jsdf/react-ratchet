@@ -1,7 +1,7 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var Badge = React.createClass({
+class Badge extends React.Component {
   render() {
     var extraClasses = []
     if (this.props.inverted) extraClasses.push('badge-inverted')
@@ -15,6 +15,6 @@ var Badge = React.createClass({
       />
     )
   }
-})
+}
 
 module.exports = Badge

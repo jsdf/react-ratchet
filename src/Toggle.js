@@ -1,21 +1,30 @@
 var React = require('react')
-var cx = require('./cx')
+var ReactDOM = require('react-dom')
+var cx = require('classnames')
 
-var Toggle = React.createClass({
+class Toggle extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
   componentDidMount() {
     // ensure ratchet toggles initialised
     require('../vendor/toggles')
-    this.refs.toggle.getDOMNode().addEventListener('toggle', this.handleToggle)
-  },
+    ReactDOM.findDOMNode(this.refs.toggle).addEventListener('toggle', this.handleToggle)
+  }
+
   componentWillUnmount() {
-    this.refs.toggle.getDOMNode().removeEventListener('toggle', this.handleToggle)
-  },
+    ReactDOM.findDOMNode(this.refs.toggle).removeEventListener('toggle', this.handleToggle)
+  }
+
   handleToggle(e) {
     var inverse = !this.props.active
     if (e.detail.isActive == inverse) {
       this.props.onToggle(inverse)
     }
-  },
+  }
+
   render() {
     var extraClasses = []
     if (this.props.active) extraClasses.push('active')
@@ -27,6 +36,6 @@ var Toggle = React.createClass({
       </div>
     )
   }
-})
+}
 
 module.exports = Toggle

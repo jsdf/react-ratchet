@@ -1,14 +1,14 @@
 var React = require('react');
-var cx = require('./cx');
+var cx = require('classnames');
 
-var SegmentedControl = React.createClass({
-	render() {
+class SegmentedControl extends React.Component {
+    render() {
 		return (
 			<div className={cx('segmented-control', this.props.className)}>
 				{this.props.children}
 			</div>
 		);
 	}
-});
+}
 
 module.exports = SegmentedControl;

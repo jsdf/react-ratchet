@@ -1,7 +1,7 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var NavBar = React.createClass({
+class NavBar extends React.Component {
   render() {
     return (
       <header
@@ -10,6 +10,6 @@ var NavBar = React.createClass({
       />
     )
   }
-})
+}
 
 module.exports = NavBar

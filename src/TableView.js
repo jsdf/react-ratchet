@@ -1,7 +1,7 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var TableView = React.createClass({
+class TableView extends React.Component {
   render() {
     return (
       <ul
@@ -10,6 +10,6 @@ var TableView = React.createClass({
       />
     )
   }
-})
+}
 
 module.exports = TableView

@@ -1,14 +1,15 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var Icon = React.createClass({
-  getIconClasses(){
+class Icon extends React.Component {
+  getIconClasses() {
     var props = this.props
     return Object.keys(props)
       .filter((propName) => props[propName] === true)
       .map((iconName) => `icon-${iconName}`)
       .join(' ')
-  },
+  }
+
   render() {
     var {type} = this.props
     var typeClassName = type ? `icon-${type}` : null
@@ -19,6 +20,6 @@ var Icon = React.createClass({
       />
     )
   }
-})
+}
 
 module.exports = Icon

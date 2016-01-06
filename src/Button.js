@@ -1,7 +1,7 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var Button = React.createClass({
+class Button extends React.Component {
   render() {
     var extraClasses = []
     if (this.props.block) extraClasses.push('btn-block')
@@ -18,6 +18,6 @@ var Button = React.createClass({
       />
     )
   }
-})
+}
 
 module.exports = Button

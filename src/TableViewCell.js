@@ -1,7 +1,7 @@
 var React = require('react')
-var cx = require('./cx')
+var cx = require('classnames')
 
-var TableViewCell = React.createClass({
+class TableViewCell extends React.Component {
   getChevronDirection() {
     if (this.props.navigateLeft) {
       return 'left'
@@ -10,7 +10,8 @@ var TableViewCell = React.createClass({
     } else {
       return null
     }
-  },
+  }
+
   renderChildren() {
     var chevronDirection = this.getChevronDirection()
     if (this.props.href || chevronDirection) {
@@ -25,7 +26,8 @@ var TableViewCell = React.createClass({
     } else {
       return this.props.children
     }
-  },
+  }
+
   renderDivider() {
     return (
       <li
@@ -35,7 +37,8 @@ var TableViewCell = React.createClass({
         href={null}
       />
     )
-  },
+  }
+
   render() {
     if (this.props.divider) {
       return this.renderDivider()
@@ -49,6 +52,6 @@ var TableViewCell = React.createClass({
       />
     )
   }
-})
+}
 
 module.exports = TableViewCell
