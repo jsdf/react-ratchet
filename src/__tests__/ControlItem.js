@@ -1,36 +1,33 @@
 jest.dontMock('../ControlItem')
 var ControlItem = require('../ControlItem')
 var React = require('react')
-var ReactDOM = require('react-dom')
-var TestUtils = require('react-addons-test-utils')
-var hasClass = require('amp-has-class')
 
 describe('ControlItem', () => {
   it('should apply the Ratchet CSS classes', () => {
-    var ctrl = TestUtils.renderIntoDocument(
+    var ctrl = (
       <ControlItem />
     )
-    expect(hasClass(ReactDOM.findDOMNode(ctrl), 'control-item')).toBe(true)
+    expect(hasClass(shallowRender(ctrl).props.className, 'control-item')).toBe(true)
   })
 
   it('should apply additional classes', () => {
-    var ctrl = TestUtils.renderIntoDocument(
+    var ctrl = (
       <ControlItem className='test' />
     )
-    expect(hasClass(ReactDOM.findDOMNode(ctrl), 'control-item test')).toBe(true)
+    expect(hasClass(shallowRender(ctrl).props.className, 'control-item test')).toBe(true)
   })
 
   it('should set active', () => {
-    var ctrl = TestUtils.renderIntoDocument(
+    var ctrl = (
       <ControlItem active />
     )
-    expect(hasClass(ReactDOM.findDOMNode(ctrl), 'control-item active')).toBe(true)
+    expect(hasClass(shallowRender(ctrl).props.className, 'control-item active')).toBe(true)
   })
 
   it('should pass children through', () => {
-    var ctrl = TestUtils.renderIntoDocument(
+    var ctrl = (
       <ControlItem>Test</ControlItem>
     )
-    expect(ReactDOM.findDOMNode(ctrl).innerHTML).toBe('Test')
+    expect(React.Children.toArray(shallowRender(ctrl).props.children)[0]).toEqual('Test')
   })
 })

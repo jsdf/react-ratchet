@@ -1,11 +1,14 @@
 jest.dontMock('../Badge')
 var Badge = require('../Badge')
 var React = require('react')
-var rendersValidElement = require('../../support/rendersValidElement')
 
 // TODO: more tests
 describe('Badge', () => {
-  it('should render', () => {
-    expect(rendersValidElement(<Badge />)).toBe(true)
+  it('adds ratchet classes', () => {
+    expect(hasClass(shallowRender(<Badge />).props.className, 'badge')).toBe(true)
+  })
+  
+  it('adds user classes', () => {
+    expect(hasClass(shallowRender(<Badge className="asdf" />).props.className, 'asdf')).toBe(true)
   })
 })

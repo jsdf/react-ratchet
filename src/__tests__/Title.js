@@ -1,11 +1,17 @@
 jest.dontMock('../Title')
 var Title = require('../Title')
 var React = require('react')
-var rendersValidElement = require('../../support/rendersValidElement')
 
-// TODO: more tests
 describe('Title', () => {
-  it('should render', () => {
-    expect(rendersValidElement(<Title />)).toBe(true)
+  it('adds ratchet classes', () => {
+    expect(hasClass(shallowRender(<Title />).props.className, 'title')).toBe(true)
+  })
+
+  it('adds user classes', () => {
+    expect(hasClass(shallowRender(<Title className="asdf" />).props.className, 'asdf')).toBe(true)
+  })
+
+  it('renders an h1 element', () => {
+    expect(shallowRender(<Title />).type).toBe('h1')
   })
 })

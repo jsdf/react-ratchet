@@ -1,11 +1,17 @@
 jest.dontMock('../Icon')
 var Icon = require('../Icon')
 var React = require('react')
-var rendersValidElement = require('../../support/rendersValidElement')
 
-// TODO: more tests
 describe('Icon', () => {
-  it('should render', () => {
-    expect(rendersValidElement(<Icon />)).toBe(true)
+  it('sets the ratchet icon class', () => {
+    expect(hasClass(shallowRender(<Icon />).props.className, 'icon')).toBe(true)
+  })
+
+  it('adds user classes', () => {
+    expect(hasClass(shallowRender(<Icon className="asdf" />).props.className, 'asdf')).toBe(true)
+  })
+
+  it('sets the icon type class', () => {
+    expect(hasClass(shallowRender(<Icon star />).props.className, 'icon-star')).toBe(true)
   })
 })

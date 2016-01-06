@@ -1,11 +1,17 @@
 jest.dontMock('../NavBar')
 var NavBar = require('../NavBar')
 var React = require('react')
-var rendersValidElement = require('../../support/rendersValidElement')
 
-// TODO: more tests
 describe('NavBar', () => {
-  it('should render', () => {
-    expect(rendersValidElement(<NavBar />)).toBe(true)
+  it('adds ratchet classes', () => {
+    expect(hasClass(shallowRender(<NavBar />).props.className, 'bar-nav bar')).toBe(true)
+  })
+  
+  it('adds user classes', () => {
+    expect(hasClass(shallowRender(<NavBar className="asdf" />).props.className, 'asdf')).toBe(true)
+  })
+
+  it('renders a header element', () => {
+    expect(shallowRender(<NavBar />).type).toBe('header')
   })
 })

@@ -1,11 +1,14 @@
 jest.dontMock('../Toggle')
 var Toggle = require('../Toggle')
 var React = require('react')
-var rendersValidElement = require('../../support/rendersValidElement')
 
 // TODO: more tests
 describe('Toggle', () => {
-  it('should render', () => {
-    expect(rendersValidElement(<Toggle />)).toBe(true)
+  it('adds ratchet classes', () => {
+    expect(hasClass(shallowRender(<Toggle />).props.className, 'toggle')).toBe(true)
+  })
+  
+  it('adds user classes', () => {
+    expect(hasClass(shallowRender(<Toggle className="asdf" />).props.className, 'asdf')).toBe(true)
   })
 })

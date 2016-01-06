@@ -18,7 +18,8 @@
     }
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest $JEST_ARGS",
+    "watch": "jest --watch",
     "example": "babel example --out-dir example-build",
     "prepublish": "babel src --out-dir lib --optional runtime"
   },
@@ -42,7 +43,11 @@
     "react-addons-test-utils": "^0.14.5"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/support/setupTestFramework.js",
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testPathDirs": [
+      "<rootDir>/src"
+    ],
     "unmockedModulePathPatterns": [
       "<rootDir>/support",
       "<rootDir>/node_modules/react",
