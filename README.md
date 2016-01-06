@@ -151,14 +151,26 @@ class MyIcon extends React.Component {
 ### Toggle
 ```
 @prop [active] {Boolean} Set the toggle to active
+@prop [onToggle] {Function} Called when the toggle is toggled, with the new 
+active state as the only argument
 @prop [className] {String} Merges with the Ratchet predefined CSS classes
 ```
 Example:
 ```javascript
 var Toggle = require('react-ratchet').Toggle;
 class MyToggle extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {active: false}
+  }
+
   render() {
-    return <Toggle active />
+    return (
+      <Toggle
+        active={this.state.active}
+        onToggle={(active) => this.setState({active})}
+      />
+    )
   }
 }
 ```
