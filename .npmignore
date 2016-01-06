@@ -2,3 +2,5 @@
 src/
 example/
 example-build/
+support/
+__tests__
