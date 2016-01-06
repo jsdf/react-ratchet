@@ -21,7 +21,7 @@
     "test": "jest $JEST_ARGS",
     "watch": "jest --watch",
     "example": "babel example --out-dir example-build",
-    "prepublish": "babel src --out-dir lib --optional runtime"
+    "prepublish": "babel src --out-dir lib --optional runtime --ignore __tests__"
   },
   "homepage": "https://github.com/jsdf/react-ratchet",
   "bugs": "https://github.com/jsdf/react-ratchet/issues",
