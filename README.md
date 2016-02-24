@@ -44,6 +44,7 @@ class MyNavBar extends React.Component {
 ```
 @prop [right] {Boolean} The side of the nav the button will be displayed
 @prop [href] {String} If defined creates an anchor, else defaults to a button
+@prop [transition] {String} A Push.js transition name to include on the child <a> link
 @prop [className] {String} Merges with the Ratchet predefined CSS classes
 ```
 Example:
