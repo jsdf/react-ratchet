@@ -88,6 +88,7 @@ class MyTableView extends React.Component {
 @prop [navigateRight] {Boolean} Right-wards chevron 
 @prop [navigateLeft] {Boolean} Left-wards chevron
 @prop [href] {String} Assigns the given href to the child anchor
+@prop [transition] {String} A Push.js transition name to include on the child <a> link
 @prop [className] {String} Merges with the Ratchet predefined CSS classes
 ```
 Example:
