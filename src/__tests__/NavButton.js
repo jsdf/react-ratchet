@@ -6,7 +6,7 @@ describe('NavButton', () => {
   it('adds ratchet classes', () => {
     expect(hasClass(shallowRender(<NavButton />).props.className, 'btn-nav btn-link btn')).toBe(true)
   })
-  
+
   it('adds user classes', () => {
     expect(hasClass(shallowRender(<NavButton className="asdf" />).props.className, 'asdf')).toBe(true)
   })
@@ -21,12 +21,19 @@ describe('NavButton', () => {
     expect(subject.props.href).toEqual('b')
   })
 
+  it('renders a data-transition property when transition provided', () => {
+    var subject = shallowRender(<NavButton href="c" transition="slide-out" />)
+    expect(subject.type).toEqual('a')
+    expect(subject.props.href).toEqual('c')
+    expect(subject.props['data-transition']).toEqual('slide-out')
+  })
+
   it('pulls left by default', () => {
     var subject = shallowRender(<NavButton />)
     expect(hasClass(subject.props.className, 'pull-left')).toBe(true)
     expect(hasClass(subject.props.className, 'pull-right')).toBe(false)
   })
-  
+
   it('pulls right when "right" prop set', () => {
     var subject = shallowRender(<NavButton right />)
     expect(hasClass(subject.props.className, 'pull-right')).toBe(true)

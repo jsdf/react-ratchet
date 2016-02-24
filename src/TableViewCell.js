@@ -16,13 +16,16 @@ class TableViewCell extends React.Component {
     var chevronDirection = this.getChevronDirection()
     if (this.props.href || chevronDirection) {
       var classes = chevronDirection ? `navigate-${chevronDirection}` : null
-      return (
-        <a
-          href={this.props.href}
-          className={classes}
-          children={this.props.children}
-        />
-      )
+      var attrs = {
+        href: this.props.href,
+        className: classes,
+        children: this.props.children
+      }
+      if (this.props.transition) {
+        attrs['data-transition'] = this.props.transition
+      }
+
+      return <a {...attrs} />
     } else {
       return this.props.children
     }
